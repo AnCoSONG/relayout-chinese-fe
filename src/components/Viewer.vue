@@ -82,7 +82,7 @@ defineExpose({
                         // 定义好各种词的属性
 
                         span {
-                            display: inline-block;
+                            // display: inline-block;
                             &.jieba-v {
                                 font-variation-settings: "wght" var(--jieba-v-wght);
                             }
