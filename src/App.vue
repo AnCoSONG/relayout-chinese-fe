@@ -25,7 +25,7 @@ import Overlay from './components/Overlay.vue';
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background-color: #dedede;
+  background-color: #f3f4f6;
   height: 100%;
   overflow-y: hidden;
   /* margin-top: 60px; */
