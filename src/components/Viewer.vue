@@ -2,14 +2,16 @@
     <!-- 展示渲染效果 -->
     <div class="viewer">
         <div class="inner">
-            <div class="content box" v-if="result != ''" v-html="cleanResult">
+            <div class="content box" v-if="result != ''" v-html="cleanResult" :style="{
+                '--jieba-v-wght': jiebaVWght
+            }">
             </div>
             <div class="no-content box" v-else>
                 <img :src="emptySvg" alt="none" class="image" />
                 <div class="message"> Input some text and click "generate!"</div>
             </div>
             <div class="btns">
-                <div class="btn" :class="{inactive: result.length == 0}" @click="clearResult">Clear</div>
+                <div class="btn hvr-grow-rotate" :class="{inactive: result.length == 0}" @click="clearResult">Clear</div>
             </div>
         </div>
     </div>
@@ -19,6 +21,7 @@ import { computed, ref } from 'vue';
 import emptySvg from '../assets/empty.svg'
 import Dompurify from 'dompurify'
 const result = ref('')
+const jiebaVWght = ref(900)
 const cleanResult = computed(() => {
     return Dompurify.sanitize(result.value)
 })
@@ -33,9 +36,11 @@ defineExpose({
     setResult
 })
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .viewer {
     flex: 1;
+    min-width: 600px;
+    width: 100%;
 
     .inner {
         width: 100%;
@@ -75,6 +80,13 @@ defineExpose({
                         text-align: unset;
 
                         // 定义好各种词的属性
+
+                        span {
+                            display: inline-block;
+                            &.jieba-v {
+                                font-variation-settings: "wght" var(--jieba-v-wght);
+                            }
+                        }
                     }
                 }
             }

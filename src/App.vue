@@ -7,15 +7,20 @@ import Overlay from './components/Overlay.vue';
 </script>
 
 <template>
-<Overlay />
-<ParameterPanel />
-<MainContent />
+  <Overlay />
+  <ParameterPanel />
+  <MainContent />
 </template>
 
 <style>
+@font-face {
+  font-family: xiaomi-flex;
+  src: url("./assets/32ba1d20b4cea47a40ec0137c2197d29.ttf") format('truetype');
+}
+
 #app {
   position: relative;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "xiaomi-flex", Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

@@ -48,9 +48,9 @@ const onGenerateBtnClicked = () => {
 </script>
 <style lang="scss" scoped>
 .input-area {
-    min-width: 300px;
+    min-width: 400px;
     width: 40%;
-    max-width: 600px;
+    max-width: 800px;
 
     .inner {
         width: 100%;
